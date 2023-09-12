@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenskam - Camera Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        html,body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            position: relative;
+            overflow-x: hidden;
+        }
+        header{
+            text-align: center;
+            margin-top: 15vh;
+        }
+        h1{
+            font-size: 60px;
+        }
+        nav{
+            margin-top: 5vh;
+        }
+        .bg-dark{
+            background-color: rgb(32, 31, 31) !important;
+        }
+        .navbar-expand-lg .navbar-collapse{
+        background-color:  rgb(32, 31, 31);
+        width: 100vw !important;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        a{
+            color: yellow;
+        }
+        .brand-buttons {
+            margin-top: 20px;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        .brand-button {
+            padding: 3px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+        .product-item {
+            flex-basis: calc(33.33% - 20px);
+            padding: 20px;
+            background-color: #44444441;
+            border: 1px solid #66666656;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .slogo{
+            margin-top: 5vh;
+        }
+        .text{
+            margin-top: 3vh;
+            font-size: 16px;
+            text-align: left;
+        }
+        .text2{
+            margin-top: 3vh;
+            text-align: left;
+        }
+        .text3{
+            text-align: left;
+        }
+        .buy-button {
+            background-color: #4a2604;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 3vh;
+        }
+        .buy-button:hover {
+            background-color: #814610;
+        }
+        .last{
+            width: 100vw !important;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Lenskam</h1>
+        <p>You Are One Click Away From All Your Camera Needs!</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: white; font-weight: bold; font-size: 30px;">Lenskam</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../scripts/index.html" style="color: white; font-size: 18px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../login/login.html" style="color: white; font-size: 18px;">Login/Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../cart/cart.html" style="color: white; font-size: 18px;">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../business/business.html" style="color: white; font-size: 18px;">For Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../download/app.html" style="color: white; font-size: 18px;">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../help/help.html" style="color: white; font-size: 18px;">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="brand-buttons">
+            <button class="brand-button btn btn-dark">Sony</button>
+            <button class="brand-button btn btn-dark">Nikon</button>
+            <button class="brand-button btn btn-dark">Canon</button>
+            <button class="brand-button btn btn-dark">Fujifilm</button>
+        </div>
+
+        <div class="product-container">
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <a href="../../cart/cart.html"><button class="buy-button">Buy Now</button></a>
+            </div>
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="../images/first.jpg" alt="Sony Product 1">
+                <div class="text">Sony NEX-7 Body With 18-55 mm Lens Mirrorless Camera</div>
+                <img src="../images/slogo.webp" style="height: 3vh;" class="slogo">
+                <div class="text2">
+                    2 Years Sony India Warranty and Free Transit insurance <span><a href="#" style="font-size: 17px;"> Know More</a></span>
+                </div>
+                <div class="text3"><h4 style="margin-top: 3vh;">Features</h4>
+                    <ul style="margin-top: 2vh;">
+                        <li>Effective Pixels: 24.3 MP</li>
+                        <li>Sensor Type: CMOS | LCD Size: 3 inch</li>
+                        <li>Max Shutter Speed: 1/4000</li>
+                        <li>Auto Focus</li>
+                        <li>Various Flash Modes</li>
+                    </ul>
+                </div>
+                <button class="buy-button">Buy Now</button>
+            </div>
+        </div>
+        <footer class="bg-dark text-white text-center py-3 last">
+            <div class="container-fluid">
+                <p>&copy; 2023 Lenskam - Camera Store. All rights reserved.</p>
+            </div>
+        </footer>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

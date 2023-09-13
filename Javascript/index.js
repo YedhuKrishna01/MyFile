@@ -1,5 +1,7 @@
-{
-    var a=null;
-    console.log(a)
+let a=0;
+do{
+    
+    console.log(a);
+    a++;
 }
-console.log(typeof(a))
+while(a<5)

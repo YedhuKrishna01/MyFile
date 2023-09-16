@@ -1,24 +1,29 @@
-let arr=[1,4,6,9,3];
-console.log(arr[3])
-let b={
-    name:"john",
-    address:[2,5,7,7,0],
-    names:{
-        place:"paris",
-        fruit:"apple",
-        color:"red"
-    }
+/*let a = prompt("");
+let b = prompt("");
+let c = prompt("");
+let cnd = b*b-4*a*c;
+console.log(cnd);
+const root = Math.sqrt(cnd);
+if (cnd>0){
+    const X1 =(-b+root)/(2*a);
+    const X2 =(-b-root)/(2*a);
+    alert("The answer is positive");
+    alert(X1);
+    alert(X2);
 }
-console.log(b.address[2]);
-console.log(b.names.fruit);
-arr.push(5,6,7);
-console.log(arr);
-function funt1(i){
-    arr.push(i,"john");
-    console.log(arr);
+else if (cnd==0){
+    alert("0");
 }
-funt1(3);
-console.log(arr.includes(0));
-console.log(arr.at(4));
-console.log(arr.indexOf("john"));
-
+else{
+    alert("The output is negative");
+}
+let date=new Date();
+console.log(date);
+console.log(date.getDay());
+console.log(date.getMonth());*/
+function one(){
+    console.log("Hello");
+}
+let to = setTimeout(()=>console.log("ok"),3000);
+let si=setInterval(one,1000);
+clearInterval(si);

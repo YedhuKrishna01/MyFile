@@ -20,10 +20,14 @@ else{
 let date=new Date();
 console.log(date);
 console.log(date.getDay());
-console.log(date.getMonth());*/
+console.log(date.getMonth());
 function one(){
     console.log("Hello");
 }
 let to = setTimeout(()=>console.log("ok"),3000);
 let si=setInterval(one,1000);
-clearInterval(si);
+clearInterval(si);*/
+let hr=10;
+let min=55;
+let sec=30;
+console.log(`${hr}:${min}:${sec}`)

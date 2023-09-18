@@ -26,8 +26,46 @@ function one(){
 }
 let to = setTimeout(()=>console.log("ok"),3000);
 let si=setInterval(one,1000);
-clearInterval(si);*/
+clearInterval(si);
 let hr=10;
 let min=55;
 let sec=30;
-console.log(`${hr}:${min}:${sec}`)
+console.log(`${hr}:${min}:${sec}`)*/
+function getdata(url,callback){
+    callback(url);
+}
+function getdata2(url){
+    let promise = new Promise((res,rej) => {
+        res(url);
+    });
+    return promise;
+}
+
+async function getdata3(url){
+    return url;
+}
+
+getdata("Get-Teachers",data =>{
+    /*
+
+    */
+   getdata(data,data2 =>{
+    getdata(data2,data3 =>{
+        console.log(data3);
+    })
+   })
+});
+getdata2("Get-Teachers")
+.then(data =>getdata2(data))
+.then(data2 =>getdata2(data2))
+.then(data3 =>console.log(data3))
+.catch(error =>console.log(error));
+
+async function get() {
+    let teachers = await getdata3("Get-Teachers");
+    let classes = await getdata3(teachers);
+    let students =await getdata3(classes);
+    console.log(students);
+}
+
+get();

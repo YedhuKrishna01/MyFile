@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input modification</title>
+</head>
+<body>
+    <p>Enter the text here:</p>
+    <input id="inp" type="text" placeholder="input text">
+    <select id="update"></select>
+    <button onclick="updateSel()">Submit</button>
+    <script>
+        function updateSel(){
+            let input = document.getElementById("inp").value;
+            let select = document.getElementById("update");
+            let option = document.createElement("option");
+            option.text = input;
+            select.add(option);
+            document.getElementById("inp").value = "";
+        }
+    </script>
+</body>
+</html>

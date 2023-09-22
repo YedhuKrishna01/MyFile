@@ -378,15 +378,6 @@ function add(){
 setInterval(add,1000)
 
 const todos = [];
-function submitHandler(){
-    let todo = document.getElementById("todo");
-    let list = document.getElementById("list");
-    todos.push(todo.value);
-    todo.value = "";
-    let li = todos.map(item => `<li>${item}</li>`);
-    list.innerHTML = li.join("");
-}*/
-const todos = [];
 console.log(document.getElementsByClassName("test"));
 console.log(document.querySelectorAll(".test"));
 document.querySelectorAll(".test").forEach(i => {
@@ -400,6 +391,49 @@ function submitHandler(e){
     li.textContent = "This is a list item";
     li.style ="border: 1px solid black";
     list.appendChild(li);
+}
+
+const todos = [];
+function submitHandler(){
+    let todo = document.getElementById("todo");
+    let list = document.getElementById("list");
+    todos.push(todo.value);
+    todo.value = "";
+    let li = todos.map(item => `<li>${item}</li>`);
+    list.innerHTML = li.join("");
+}*/
+let todos = [];
+let list = document.querySelector("#list");
+let todo = document.getElementById("todo");
+function submitHandler(e){
+    e?.preventDefault();
+    todo.vakue ? todos.push(todo.value) : null;
+    print();
+    todo.value = "";
+}
+function edit(index){
+    todo.value = todos[index];
+    del(index);
+}
+function del(index){
+    todos = todos.filter((td,tdi) => tdi !== index);
+    print();
+} 
+
+function print(){
+    todos.forEach((item,index) => {
+        let li = document.createElement("li");
+        li.textContent = item;
+        let btn1 = document.createElement("button");
+        btn1.textContent = "Edit";
+        btn1.addEventListener("click",() => edit(index));
+        let btn2 = document.createElement("button");
+        btn2.textContent = "Delete";
+        btn2.addEventListener("click",() => del(index));
+        li.appendChild(btn1);
+        li.appendChild(btn2);
+        list.appendChild(li);
+    })
 }
 
 

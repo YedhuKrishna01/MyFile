@@ -6,13 +6,13 @@
     <title>JavaScript</title>
 </head>
 <body>
-    <div class="test"></div>
-    <form onsubmit="submitHandler(e)">
-        <input type="text" id="todo">
-        <button type="button" onclick="submitHandler()">Submit</button>
+    <form onsubmit="submitHandler(event)">
+        <input name="todo" type="text" id="todo">
+        <button type="submit">add</button>
     </form>
     <ul id="list">
     </ul>
+    <div class="test"></div>
     <script src="./index.js"></script>
 </body>
 </html>

@@ -1,0 +1,15 @@
+html,body{
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+.data{
+    border: 3px solid black;
+    height: 50vh;
+    width: 40vw;
+    font-size: 20px;
+    margin-top: 30vh;
+    margin-left: 30vw;
+}

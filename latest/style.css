@@ -1,0 +1,32 @@
+.chessboard {
+    width: 70vh;
+    height: 70vh;
+    margin-left: 30vw;
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 2px solid black;
+}
+
+.chessboard > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.chessboard .white {
+    background-color: white;
+}
+
+.chessboard .black {
+    background-color: black;
+}
+
+.navbtns{
+    margin-left: 30vw;
+    margin-top: 5vh;
+}

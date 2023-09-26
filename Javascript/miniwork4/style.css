@@ -1,11 +1,8 @@
 html,body{
     margin: 0;
     box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
 }
 
 .data{
@@ -53,4 +50,11 @@ h1{
 }
 h1::first-letter{
     font-size: 60px;
+}
+#table{
+    margin-top: 5vh;
+    margin-left: 35vw;
+}
+tr{
+    padding-left: 3vh;
 }

@@ -48,9 +48,10 @@ class Datas {
         this.password = pass;
         this.re_enter = confirmPass;
     }
-
     getinfo() {
-        console.log(`Hello ${this.firstname} ${this.lastname}, the password of your email id ${this.email} is changed to ${this.password}`);
+        console.log(`Hello ${this.firstname} ${this.lastname}, the password of your email id ${this.email} is set to ${this.password}`);
+        let tbl = document.getElementById("table");
+        tbl.innerHTML = "<tr id = 'first' ><th>firstname</th><th>lastname</th><th>mailid</th><th>password</th></tr><tr id = 'sec'><td>Yedhu</td><td>Krishna</td><td>yedhukrishnagk@gmail.com</td><td>hh</td></tr>"; 
     }
 
     inarrform(){

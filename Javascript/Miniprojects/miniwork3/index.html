@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprGzgtFk4kJ5qgao5f5+fpf5i/mOd7F5Fy5v5Y/h4vO5v5+5o5v5/Yf5v5+5Y3Hv3v5+5m5Xh3Hv3v5/z5O5v5/Xh3f5W5H" crossorigin="anonymous">
+    <title>Chessboard</title>
+    <style>
+        .chessboard {
+    width: 80vh;
+    height: 80vh;
+    margin-left: 30vw;
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    border: 2px solid black;
+    position: relative;
+}
+
+.chessboard > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.chessboard .white {
+    background-color: white;
+}
+
+.chessboard .black {
+    background-color: black;
+}
+
+.troop{
+    background-color: red;
+    border: 2px solid black;
+    height: 6vh;
+    width: 6vh;
+    border-radius: 50%;
+    position: absolute;
+    top: 12vh;
+    left: 31.5vw;
+}
+
+.navbtns{
+    margin-left: 30vw;
+    margin-top: 5vh;
+}
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="chessboard" id="chessboard"></div>
+        <div class="troop" id="troop"></div>
+    </div>
+    <div class="navbtns">
+        <button type="button" onclick="move(up)" class="up">UP</button>
+        <button type="button" onclick="move(down)" class="down">DOWN</button>
+        <button type="button" onclick="move(left)" class="left">LEFT</button>
+        <button type="button" onclick="move(right)" class="right">RIGHT</button>
+    </div>
+    <script>
+        const chessboard = document.getElementById('chessboard');
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+                const block = document.createElement('div');
+                if ((row + col) % 2 === 0) {
+                    block.classList.add('white');
+                } else {
+                    block.classList.add('black');
+                }
+                chessboard.appendChild(block);
+            }
+        }
+const count = 8;
+const size = 5;
+let x = 12;
+let y = 31.5;
+troop = document.getElementById("troop");
+function move(dir){
+    switch(dir){
+        case "up": troop.style.top=top-size+"vh";break;
+        case "down": troop.style.top=top+size+"vh";break;
+        case "left": troop.style.left=left-size+"vh";break;
+        case "right": troop.style.top=left+size+"vh";break;
+}
+}
+    </script>
+</body>
+</html>

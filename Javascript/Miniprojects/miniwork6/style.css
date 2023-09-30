@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+}
+.main{
+    height: 50vh;
+    width: 40vw;
+    margin: 20vh 20vw;
+    background-color: aliceblue;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding-left: 3vw;
+    padding-top: 4vh;
+}
+input{
+    height: 3vh;
+    width: 20vw;
+    margin-bottom: 3vh;
+}

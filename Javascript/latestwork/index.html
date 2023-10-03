@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <style>
+        .product-card{
+            border: 1px solid black;
+            padding:10px;
+            margin-top: 10vh;
+            margin-left: 30vw;
+            width: 40vw;
+            display: inline-block;
+            text-align: center;
+        }
+        .product-image{
+            max-width: 100%;
+            height: auto;
+        }
+        .product-title{
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .product-price{
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="product-card" id="pCard"></div>
+    <script>
+        let prod = document.getElementById("pCard");
+        let response = fetch("https://dummyjson.com/products");
+        response.then(res =>{
+        return res.json()
+        })
+        .then(data =>{
+            data.products.forEach(element => {
+            console.log(element.title);
+            console.log(element);
+            let card = `<h1>${element.title}</h1>
+            <img src="${element.thumbnail}">
+            <a href = "https://dummyjson.com/products/${element.id}"><br><input type="submit" style="background-color:red;color:white;margin-top:5vh;border:none;font-size:25px;border-radius:10px;padding:2vh" value="view"></a>`
+            prod.innerHTML+=card;
+        
+            });
+        })
+    </script>
+</body>
+</html>

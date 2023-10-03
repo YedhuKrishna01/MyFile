@@ -7,31 +7,50 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<section class="section-products">
-	<div class="container mt-5 mb-5">
-		<div class="d-flex justify-content-center row">
-			<div class="col-md-10">
-				<div class="row p-2 bg-white border rounded">
-					<div class="col-md-3 mt-1 img" id="img">
-					</div>
-					<div class="col-md-6 mt-1">
-						<div id="title"></div>
-					</div>
-					<div class="align-items-center align-content-center col-md-3 border-left mt-1">
-						<div class="d-flex flex-row align-items-center"id="price">
-						</div>
-						<h6 class="text-success">Free shipping</h6>
-                        <a href="./cart.html">
-                            <button class="btn btn-outline-primary btn-sm mt-2" type="button" onclick="add();">Add to Cart</button>
-                        </a>
-					</div>
-				</div>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-  <script src="./script2.js"></script>
+    <section class="section-products">
+        <div class="container mt-5 mb-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="row p-2 bg-white border rounded">
+                        <div class="col-md-3 mt-1 img" id="img">
+                        </div>
+                        <div class="col-md-6 mt-1">
+                            <div id="title"></div>
+                        </div>
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                            <div class="d-flex flex-row align-items-center"id="price">
+                            </div>
+                            <h6 class="text-success">Free shipping</h6>
+                            <a href="./cart.html">
+                                <button class="btn btn-outline-primary btn-sm mt-2" type="button" onclick="add();">Add to Cart</button>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let details=document.getElementById("details")
+        let price = document.getElementById("price");
+        let title = document.getElementById("title");
+        let prod = document.getElementById("img");
+        let id = Number(window.location.href.split("id=")[1]);
+        fetch(`https://dummyjson.com/products/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            let li = `          
+               <img src="${data.thumbnail}" alt="${data.title}"width="105%">           
+            `
+            let li1=`<h2>${data.title}</h2>`
+            let li2=`<h3>$${data.price}</h3>`
+            let li3=`<p>${data.description}</p>`
+            prod.innerHTML = li;
+            title.innerHTML=li1;
+            price.innerHTML=li2;
+        details.innerHTML=li3;
+        });
+    </script>
 </body>
 </html>

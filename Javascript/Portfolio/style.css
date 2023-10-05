@@ -1,0 +1,9 @@
+html,body{
+    
+    box-sizing: border-box;
+}
+
+.full-width {
+    padding-left: 0;
+    padding-right: 0;
+}

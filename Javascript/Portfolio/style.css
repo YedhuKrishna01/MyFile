@@ -1,9 +1,60 @@
-html,body{
-    
-    box-sizing: border-box;
+.background-image {
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-.full-width {
-    padding-left: 0;
-    padding-right: 0;
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: ant1 5s infinite;
+}
+
+.heading {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.subhead{
+    font-size: 1.6em;
+    color: rgba(255, 255, 255, 0.61);
+}
+
+.nav-items{
+    color: rgba(255, 255, 255, 0.61);
+    margin: 0.5vw;
+    font-size: 1.2em;
+}
+
+a:hover,a:focus{
+    text-decoration: underline;
+    color: white;
+    text-underline-offset: 5px;
+    text-decoration-color: yellow;
+}
+
+@media screen and (max-width:600px){
+    .heading{
+        font-size: 2em;
+    }
+
+    .subhead{
+        font-size: 1.1em;
+    }
+
+    .nav-items{
+        margin: 0.5vh;
+        font-size: 0.9em;
+    }
+}
+
+@keyframes ant1 {
+    from{justify-content: center;}
+    to{justify-content: start;}
 }

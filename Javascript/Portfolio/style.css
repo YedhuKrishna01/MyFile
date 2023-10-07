@@ -1,3 +1,9 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
 .background-image {
     background-image: url('./images/bg.jpg');
     background-size: cover;
@@ -5,7 +11,7 @@
     background-attachment: fixed;
 }
 
-.container {
+.subcontainer {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -13,7 +19,6 @@
     align-items: center;
     justify-content: center;
     color: white;
-    animation: ant1 5s infinite;
 }
 
 .heading {
@@ -39,6 +44,46 @@ a:hover,a:focus{
     text-decoration-color: yellow;
 }
 
+.about{
+    color: rgba(255, 255, 255, 0.61);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.aboutFirstCol{
+    padding: 1.5vh 5vw;
+    font-size: 1.2em;
+}
+
+.aboutSecCol{
+    grid-column: span 2;
+    grid-row: span 6;
+    margin-left: 5vw;
+    margin-top: 20vh;
+}
+
+.secCol_1{
+    font-size: 2.5em;
+    color: yellow;
+    font-weight: bold;
+}
+
+.aboutSecRow{
+    padding-left: 5vw;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+.aboutThirdRow{
+    grid-row: span 5;
+}
+
+.abtimg{
+    width: 30vw;
+}
+
 @media screen and (max-width:600px){
     .heading{
         font-size: 2em;
@@ -52,9 +97,18 @@ a:hover,a:focus{
         margin: 0.5vh;
         font-size: 0.9em;
     }
+
+    .aboutFirstCol{
+        font-size: 0.9em;
+    }
+
+    .secCol_1{
+        font-size: 1.5em;
+        margin-top: -6vh;
+    }
+
+    .aboutSecRow{
+        font-size: 1.2em;
+    }
 }
 
-@keyframes ant1 {
-    from{justify-content: center;}
-    to{justify-content: start;}
-}

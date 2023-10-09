@@ -5,7 +5,7 @@ html,body{
     background-color: black;
 }
 .background-image {
-    background-image: url('./images/bg.jpg');
+    background-image: url('./images/bg3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -56,7 +56,7 @@ a:hover,a:focus{
     color: rgba(255, 255, 255, 0.61);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 5vh 8vh 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 5vh 8vh 15vh 55vh 40vh;
 }
 
 .aboutFirstCol{
@@ -66,7 +66,7 @@ a:hover,a:focus{
 
 .aboutSecCol{
     grid-column: span 2;
-    grid-row: span 6;
+    grid-row: span 3;
     margin-left: 5vw;
     margin-top: 20vh;
 }
@@ -99,11 +99,12 @@ a:hover,a:focus{
 }
 
 .aboutThirdRow{
-    grid-row: span 3;
+    grid-row: span 2;
 }
 
 .abtimg{
-    width: 30vw;
+    width: 20vw;
+    margin-left: 5vw;
     border-left: 8px solid rgb(255, 217, 1);
     border-top: 8px solid rgb(255, 217, 1);
     border-right: 8px solid black;
@@ -128,6 +129,20 @@ li{
 
 .aboutFourthRow{
     padding: 1.5vh 5vw;
+    font-size: 2.2em;
+    color: white;
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.resume{
+    display: grid;
+    grid-template-columns: 10vh 40vh 40vh;
+    grid-template-rows: 5vh 8vh 15vh 55vh 40vh;
+    color: white;
+    margin-left: 5vw;
+}
+.resumeFirstRow{
     font-size: 1.5em;
     color: rgba(255, 255, 255, 0.61);
 }

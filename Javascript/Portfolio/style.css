@@ -3,6 +3,7 @@ html,body{
     padding: 0;
     box-sizing: border-box;
     background-color: black;
+    overflow-x: hidden;
 }
 .background-image {
     background-image: url('./images/bg3.jpg');
@@ -137,14 +138,70 @@ li{
 
 .resume{
     display: grid;
-    grid-template-columns: 10vh 40vh 40vh;
-    grid-template-rows: 5vh 8vh 15vh 55vh 40vh;
+    grid-template-columns: 75vh 75vh;
+    grid-template-rows: 5vh 8vh 15vh 20vh;
     color: white;
     margin-left: 5vw;
+    margin-top: 15vh;
 }
 .resumeFirstRow{
     font-size: 1.5em;
+    grid-column: span 2;
     color: rgba(255, 255, 255, 0.61);
+}
+
+.resumeSecRow{
+    font-size: 2em;
+    margin-top: 2vh;
+    color: white;
+    font-weight: bold;
+}
+
+.resumeThirdRow{
+    font-size: 1.5em;
+    margin-top: 1vh;
+    color: rgb(255, 217, 1);
+    font-weight: bold;
+}
+
+.resumeFourthRow{
+    margin-top: -2vh;
+    margin-left: 3vw;
+    font-size: 1.2em;
+}
+
+.services{
+    display: grid;
+    grid-template-columns: 55vh 55vh 55vh;
+    grid-template-rows: 5vh 8vh 30vh;
+    color: white;
+    margin-left: 5vw;
+    margin-top: 15vh;
+}
+
+.serFirstRow{
+    color: rgba(255, 255, 255, 0.61);
+    font-size: 1.5em;
+    grid-column: span 3;
+}
+
+.serSecRow{
+    grid-column: span 3;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.serThirdRow{
+    display: flex;
+    margin-top: 3vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.serThirdRow:hover{
+    background-color: rgb(255, 217, 1);
+    border-radius: 20px;
 }
 
 @media screen and (max-width:600px){

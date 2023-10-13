@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Source+Code+Pro&display=swap');
+
+body {
+    background-color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: cornflowerblue;
+    width: 100%;
+  }
+  
+  .navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-left{
+    margin-left: 5vh;
+  }
+  
+  .page-name {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-left: 20vh;
+  }
+  
+  .search-box {
+    padding: 10px;
+    width: 250px;
+    height: 5vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .product-cart, .user-icon {
+    font-size: 1rem;
+    color: white;
+    text-underline-offset: 3px;
+  }
+  
+h1 {
+    color: white;
+}
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 56px);
+}
+
+.product-card {
+    background-color: cornflowerblue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 1400px;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-gallery img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 10px;
+}
+
+.product-info {
+    margin-top: 20px;
+}
+
+.price {
+    font-weight: bold;
+}

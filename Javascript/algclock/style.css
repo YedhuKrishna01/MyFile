@@ -1,0 +1,54 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.clock{
+    background-color: rgb(197, 32, 32);
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clockframe{
+    display: flex;
+    justify-content: center;
+    width: 29vw;
+    height: 29vw;
+    background-image: url(./images/clock.jpg);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.hourhand{
+    width: 1vw;
+    height: 10vh;
+    margin-top: 19vh;
+    margin-left: -1vh;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.minhand{
+    width: 0.75vw;
+    height: 14vh;
+    margin-top: 15vh;
+    margin-left: -2vh;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.sechand{
+    width: 0.5vw;
+    height: 18vh;
+    margin-top: 11vh;
+    margin-left: -1.5vh;
+    background-color: black;
+    border-radius: 10px;
+}

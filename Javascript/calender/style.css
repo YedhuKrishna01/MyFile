@@ -1,4 +1,4 @@
-.main{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,19 +6,40 @@
     width: 100vw;
 }
 
-.caloutline{
+.outline{
+    background-color: #ea2132f3;
+    border-radius: 20px;
+    height: 47vh;
+    width: 35vw;
     display: flex;
     justify-content: center;
-    background-color: purple;
-    width: 40vw;
-    height: 50vh;
-    border: 1px solid black;
-    border-radius: 20px;
 }
 
-.calmain{
-    background-color: white;
-    border-radius: 20px;
-    width: 35vw;
+.calendar {
+    font-family: Arial, sans-serif;
+    width: 30vw;
     height: 40vh;
+}
+.calendar th, .calendar td {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.calendar th {
+    background-color: #a6002c;
+    color: #fff;
+}
+.calendar td {
+    cursor: pointer;
+}
+
+.btn-danger{
+    background-color: #ea2131;
+    margin-top: 55vh;
+    margin-right: 1vw;
+}
+
+.btn1{
+    margin-left: -20vw;
 }

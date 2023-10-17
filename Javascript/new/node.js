@@ -6,13 +6,20 @@ const server = http.createServer((req,res)=>{
     if(path ==="/"){
         res.writeHead(200,{"Content-Type":"text/html"})
         res.write(`
+        <body>
         <form action="/api" method ="get">
         <h3>Enter your Username:</h3>
-        <input type="text" class="username" name = "username">
+        <input type="text" id="username" name = "username">
         <h3>Enter your Emailid:</h3>
         <input type="email" name = "email">
-        <input type = "submit">
-        </form>`);
+        <input type = "submit" onClick="fetchData()">
+        </form>
+        <script>
+        function fetchData(){
+            let user =document.getElementById("username")
+        }
+        </script>
+        </body>`);
         res.end();
     }
     if(path==="/api"){

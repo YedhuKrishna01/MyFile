@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
-const port = 3000;
+const port = 2000;
 const server = http.createServer((req, res) => {
   let path = url.parse(req.url).pathname;
   if (path === "/") {
@@ -23,15 +23,9 @@ const server = http.createServer((req, res) => {
                 res.write("Error has occured");
             }
         })
+
     })
-    // fs.appendFile("./data.txt",JSON.stringify(query),error =>{
-    //     if(error){
-    //         res.write("Error occured");
-    //         return;
-    //     }
-    // })
-    res.write(`Username is ${/^[a-z0-9]{4,}$/.test(query.username) ? "Valid" : "Invalid"}
-    Email is ${/^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,6}$/.test(query.email) ? "Valid" : "Invalid"}`);
+    res.write(`Todo list ${/^[a-z0-9]{4,}$/.test(query.toDoList) ? "Modified" : "Remains the same"}`);
     res.end();
   }
 });

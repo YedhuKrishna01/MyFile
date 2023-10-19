@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Todo List
+    </title>
 </head>
 <body>
     <form action="/api" method="get" onsubmit="abc(event)">
       <h3>Enter your Event:</h3>
-      <input type="text" id="toDoList" name="toDoList">
+      <input type="text" id="todo" name="todo">
       <input type="submit">
     </form>
+    <ol id="list">
+
+    </ol>
     <script>
+      let list = document.getElementById("list");
+      fetch("/get-todo")
+      .then(res=> res.json())
+      .then(data=>{
+        let dataObj = JSON.parse(data?data:"[]");
+        console.log(dataObj);
+        dataObj.forEach(element => {
+          let li = `<li>${element.todo}<button onclick="del('${element.todo}')">delete</button></li>`;
+          list.innerHTML +=li;         
+        });
+      })
       function abc(event) {
         event.preventDefault();
-        let toDoList = document.getElementById("toDoList").value;
-        console.log(toDoList);
-
-        fetch("/api?toDoList=" + toDoList)
+        let todo = document.getElementById("todo").value;
+        fetch("/set-todo?todo=" + todo)
         .then(res => res.text())
         .then(data => {
             console.log(data);
+            list.innerHTML += `<li>${todo}<button onclick="del('${todo}')">delete</button></li>`
+        })
+      }
+      function del(todo){
+        console.log(todo)
+        fetch('/ddel-todo?todo=${todo}')
+        .then(res =>res.text())
+        .then(data=>{
+          console.log(data);
         })
       }
     </script>

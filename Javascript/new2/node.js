@@ -46,12 +46,34 @@ const server = http.createServer((req, res) => {
           res.write("Error occured");
         }
         res.end()
+      })
+    });
+  }
+  if(path==="/edit-todo"){
+    let query = url.parse(req.url, true).query;
+    console.log(query);
+    fs.readFile("./data.json","utf-8",(error,data)=>{
+      let newList =JSON.parse(data).map(item=>{
+        if(item.todo ===query.oldTodo){
+          return {todo:query.newTodo};
+        }
+        return item;
+      });
+      fs.writeFile("./data.json",JSON.stringify(newList),error=>{
+        res.write("success");
+        if(error){
+          res.write("Error occured")
+        }
+        res.end();
+      })
+    })
+  }
+});
 
-
-        server.listen(port, error => {
-          if (error) {
-            console.log(error);
-          } else {
-            console.log("server started on port " + port);
-          }
-        })
+server.listen(port, error => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("server started on port " + port);
+  }
+})

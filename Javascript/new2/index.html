@@ -17,16 +17,21 @@
     </ol>
     <script>
       let list = document.getElementById("list");
-      fetch("/get-todo")
+      function print(){
+        fetch("/get-todo")
       .then(res=> res.json())
       .then(data=>{
         let dataObj = JSON.parse(data?data:"[]");
         console.log(dataObj);
+        list.innerHTML="";
         dataObj.forEach(element => {
-          let li = `<li>${element.todo}<button onclick="del('${element.todo}')">delete</button></li>`;
+          let li = `<li>${element.todo}<button onclick="del('${element.todo}')">delete</button>
+            <button onclick="edit('${todo}')">edit</button></li>`;
           list.innerHTML +=li;         
         });
       })
+}
+print();
       function abc(event) {
         event.preventDefault();
         let todo = document.getElementById("todo").value;
@@ -34,17 +39,28 @@
         .then(res => res.text())
         .then(data => {
             console.log(data);
-            list.innerHTML += `<li>${todo}<button onclick="del('${todo}')">delete</button></li>`
+            list.innerHTML += `<li>${todo}<button onclick="del('${todo}')">delete</button>
+              <button onclick="edit('${todo}')">edit</button></li>`
         })
       }
       function del(todo){
         console.log(todo)
-        fetch('/ddel-todo?todo=${todo}')
+        fetch(`/del-todo?todo=${todo}`)
         .then(res =>res.text())
         .then(data=>{
           console.log(data);
+          print();
+        })
+      }
+      function edit(oldTodo){
+        let newTodo = prompt("Enter the new todo");
+        fetch(`/edit-todo?oldTodo =${oldTodo}&newTodo=${newTodo}`)
+        .then(res =>res.text())
+        .then(data=>{
+          console.log(data);
+          print();
         })
       }
     </script>
-  </body>`
+  </body>
 </html>

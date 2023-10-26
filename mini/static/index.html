@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="abc(event)">
+      <input type="text" name="todo" id="todo">
+      <input type="submit">
+    </form>
+    <ol id="list">
+
+    </ol>
+    <script>
+      let list = document.getElementById("list");
+      let todo = document.getElementById("todo");
+      function abc(event){
+        event.preventDefault();
+        fetch("/api",{
+          method:"post",
+          body:{
+            todo:todo.value
+          }
+        })
+      }
+      // function abc(event) {
+      //   event.preventDefault();
+      //   let username = document.getElementById("username").value;
+      //   let email = document.getElementById("email").value;
+      //   console.log(username,email);
+
+      //   fetch("/api?username=" + username + "&email=" + email)
+      //   .then(res => res.text())
+      //   .then(data => {
+      //       console.log(data);
+      //   })
+      // }
+    </script>
+  </body>`
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Todo List
+    </title>
+</head>
+<body>
+    <form action="/api" method="get" onsubmit="abc(event)">
+      <h3>Enter your Event:</h3>
+      <input type="text" id="todo" name="todo">
+      <input type="submit">
+    </form>
+    <ol id="list">
+
+    </ol>
+    <script>
+      let list = document.getElementById("list");
+      function print(){
+        fetch("/get-todo")
+      .then(res=> res.json())
+      .then(data=>{
+        let dataObj = JSON.parse(data?data:"[]");
+        console.log(dataObj);
+        list.innerHTML="";
+        dataObj.forEach(element => {
+          let li = `<li>${element.todo}<button onclick="del('${element.todo}')">delete</button>
+            <button onclick="edit('${todo}')">edit</button></li>`;
+          list.innerHTML +=li;         
+        });
+      })
+}
+print();
+      function abc(event) {
+        event.preventDefault();
+        let todo = document.getElementById("todo").value;
+        fetch("/set-todo?todo=" + todo)
+        .then(res => res.text())
+        .then(data => {
+            console.log(data);
+            list.innerHTML += `<li>${todo}<button onclick="del('${todo}')">delete</button>
+              <button onclick="edit('${todo}')">edit</button></li>`
+        })
+      }
+      function del(todo){
+        console.log(todo)
+        fetch(`/del-todo?todo=${todo}`)
+        .then(res =>res.text())
+        .then(data=>{
+          console.log(data);
+          print();
+        })
+      }
+      function edit(oldTodo){
+        let newTodo = prompt("Enter the new todo");
+        fetch(`/edit-todo?oldTodo =${oldTodo}&newTodo=${newTodo}`)
+        .then(res =>res.text())
+        .then(data=>{
+          console.log(data);
+          print();
+        })
+      }
+    </script>
+  </body>
+</html>

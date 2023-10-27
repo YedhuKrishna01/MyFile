@@ -18,25 +18,13 @@
       let todo = document.getElementById("todo");
       function abc(event){
         event.preventDefault();
-        fetch("/api",{
-          method:"post",
-          body:{
-            todo:todo.value
-          }
+        fetch("/api?name="+ todo.value,{
+          method:"get"
+        })
+        .then(res=>{
+          console.log(res);
         })
       }
-      // function abc(event) {
-      //   event.preventDefault();
-      //   let username = document.getElementById("username").value;
-      //   let email = document.getElementById("email").value;
-      //   console.log(username,email);
-
-      //   fetch("/api?username=" + username + "&email=" + email)
-      //   .then(res => res.text())
-      //   .then(data => {
-      //       console.log(data);
-      //   })
-      // }
     </script>
-  </body>`
+  </body>
 </html>

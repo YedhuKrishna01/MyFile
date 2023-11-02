@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 const Schema = new mongoose.Schema({
+    id:{
+        type:Number
+    },
     firstname:{
         type:String
     },

@@ -12,7 +12,9 @@ export async function setData(req,res){
 }
 export async function getData(req,res){
     try{
-        let data=await UserSchema.find();
+        let { id } = req.query;
+        console.log(req.query)
+        let data=await UserSchema.findOne({id:id});
         res.json(data);
     }catch(error){
         console.log(error);
@@ -23,7 +25,7 @@ export async function updateData(req,res){
     try{
         let {id}=req.query;
         let data =req.body;
-        let result = await UserSchema.updateOne({id:id},data);
+        let result = await UserSchema.updateOne({_id:id},data);
         res.json(result);
     }catch(error){
         console.log(error);
@@ -33,7 +35,7 @@ export async function updateData(req,res){
 export async function deleteData(req,res){
     try{
         let {id}=req.query;
-        let result = await UserSchema.deleteOne({id:id});
+        let result = await UserSchema.deleteOne({_id:id});
         res.json(result);
     }catch(error){
         console.log(error);

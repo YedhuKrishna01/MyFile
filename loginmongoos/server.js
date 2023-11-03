@@ -8,7 +8,7 @@ const server = express();
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan("tiny"));
-server.use("/", express.static("./static/index.html"));
+server.use("/", express.static("./static"));
 server.use("/api", router);
 
 conn().then(()=>{
@@ -23,4 +23,3 @@ conn().then(()=>{
 .catch(error=>{
     console.log(error);
 })
-

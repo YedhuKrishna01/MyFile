@@ -16,5 +16,3 @@ function middleware(req,res,next){
         res.json("Not passed")
     }
 }
-
-

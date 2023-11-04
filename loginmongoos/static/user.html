@@ -10,7 +10,7 @@
     <script>
         console.log(location.href);
         let id = location.href.split("?id=")[1];
-        fetch(`http://localhost:3200/api/get-data?id=${id}`)
+        fetch(`http://localhost:3200/api/login?id=${id}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);

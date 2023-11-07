@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
-const Schema = new mongoose.Schema({
+import mongoose from "mongoose"
+const Schema=new mongoose.Schema({
     username:{
         type:String
     },
     password:{
-        type:String
+type:String
     }
-});
-export default mongoose.model.logins || mongoose.model("login",Schema);
+})
+export default mongoose.Logins ||  mongoose.model("Login",Schema);

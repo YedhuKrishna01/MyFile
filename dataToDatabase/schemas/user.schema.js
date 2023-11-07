@@ -1,13 +1,19 @@
 import mongoose from "mongoose";
-const Schema = new mongoose.Schema({
+const Schema=new mongoose.Schema({
     id:{
         type:Number
     },
-    firstname:{
+    name:{
         type:String
     },
-    lastname:{
+    fname:{
         type:String
+    },
+    lname:{
+        type:String
+    },
+    ph:{
+        type:Number
     },
     email:{
         type:String
@@ -15,5 +21,6 @@ const Schema = new mongoose.Schema({
     password:{
         type:String
     }
+
 });
-export default mongoose.model.users || mongoose.model("user",Schema);
+export default mongoose.model.Users || mongoose.model("User",Schema);

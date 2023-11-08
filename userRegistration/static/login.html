@@ -29,8 +29,12 @@
         })
         .then(res=>res.json())
         .then(data=>{
+            alert(data.msg);
             localStorage.setItem("token",data.token)
             location.href="http://localhost:3000/user.html"
+        })
+        .catch(error=>{
+            console.log(error);
         })
     }
 </script>

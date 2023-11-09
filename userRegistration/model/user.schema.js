@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const schema=new mongoose.Schema({
+const Schema=new mongoose.Schema({
     username:{
         type:String,
         required:true,
@@ -11,4 +11,4 @@ const schema=new mongoose.Schema({
     }
 
 });
-export default mongoose.model.Logins || mongoose.model("Logins",schema);
+export default mongoose.model.users || mongoose.model("user",Schema);

@@ -1,8 +1,9 @@
 import bcrypt from "bcrypt";
 import userSchema from "./model/user.schema.js";
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
+import notesSchema from "./model/notes.schema.js";
 
-const {sign}=jwt;
+const { sign }=jwt;
 
 export async function register(req,res){
     try {
@@ -72,6 +73,29 @@ export async function profile(req, res){
 export async function addNote(req, res){
     try {
         let { note } = req.body;
+        let { id } = req.user;
+        let result = await notesSchema.create({
+            note,
+            userId:id
+        })
+        res.json("Note added successfully")
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error");
+    }
+}
+
+export async function getNote(req, res){
+    try {
+        let { id } = req.user;
+        let result = await notesSchema.create({ userId:id });
+        console.log(result);
+        if(result>0){
+            return res.status(200).send(result);
+        }
+        else{
+            return res.status(200).send({ msg: "No notes to show" })
+        }
     } catch (error) {
         console.log(error);
         res.status(500).send("Error");

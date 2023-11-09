@@ -6,6 +6,70 @@
     <title>User</title>
 </head>
 <body>
-    <h3>User Details</h3>
+    <h3 id = "heading">User Details</h3>
+    <form onsubmit="add(event)">
+        <textarea name="note" id="note" cols="30" rows="30"></textarea>
+        <input type="submit" value="add">
+    </form>
+    <ol id="notes"></ol>
+    <script>
+        let heading = document.getElementById("heading");
+        let notes = document.getElementById("notes");
+        let token = localStorage.getItem("token");
+        function add(event){
+            event.preventDefault();
+            fetch("http://localhost:3000/api/add-note",{
+                method:"post",
+                headers:{
+                    authorization: `Bearer ${token}`
+                },
+                body:JSON.stringify({
+                    note:note.value
+                })
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                alert(data)
+            })
+            .catch(error=>{
+                console.log(error);
+            })
+        }
+        function profile(){
+            fetch("http://localhost:3000/api/profile",{
+                method:"get",
+                headers:{
+                    authorization:`Bearer ${token}`
+                }
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                heading.innerHTML = `Welcome ${data.username}`
+            })
+            .catch(error=>{
+                console.log(error);
+            })
+            fetch("http://localhost:3000/api/get-note",{
+                method:"get",
+                headers:{
+                    authorization:`Bearer ${token}`
+                }
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                notes.innerHTML = "";
+                if(data.msg){
+                    notes.innerHTML = `${data.msg}`;
+                    return;
+                }
+                data.forEach(item => {
+                    let li = `<li>${item.note}</li>`
+                    notes.innerHTML+=li;
+                    
+                })
+            })
+        }
+        profile()
+    </script>
 </body>
 </html>

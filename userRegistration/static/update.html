@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Update</title>
 </head>
 <body>
     <h3>Update</h3>
     <form onsubmit="update(event)">
-        <input type="text" name="username" id="username" placeholder="Username"><br>
-        <input type="email" name="email" id="email" placeholder="Email"><br>
-        <input type="text" name="phone" id="phone" placeholder="PhoneNo"><br>
-        <input type="submit" value="Update" >
+        <input type="file" id="file" name="image">
+        <input type="submit" value="update" >
 </form>
+<img alt="image">
 <script>
+    let image = document.getElementById("image");
+    let img = document.getElementsByTagName("img");
+    function update(event){
+        event.preventDefault();
+        readFile(image.files[0])
+        .then(file=>{
+            img.src= file;
+            fetch("",{
+                body:JSON.stringify({
+                    image:file
+                })
+            })
+        })
+    }
+    function readFile(file){
+        return new Promise((res, rej) =>{
+            let fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload=()=>{
+                res(fileReader.result);
+            }
+            fileReader.onerror=()=>{
+                rej(fileReader.error);
+            }
+        })
+    }
 </script>
 </body>
 </html>

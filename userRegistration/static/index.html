@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Registration</h1>
+    <h1>Register</h1>
     <form onsubmit="register(event)">
         <input type="text" name="username" id="username" placeholder="username"><br>
         <input type="password" name="password" id="password" placeholder="password"><br>
@@ -15,25 +15,25 @@
     <script>
         let username = document.getElementById("username");
         let password = document.getElementById("password");
-        function register(event){
+        function register(event) {
             event.preventDefault();
-            fetch(`http://localhost:3000/api/register`,{
-                method:"post",
-                headers:{
-                    "Content-Type":"application/json"
+            fetch(`http://localhost:3000/api/register`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
                 },
-                body:JSON.stringify({
-                    username:username.value,
-                    password:password.value
+                body: JSON.stringify({
+                    username: username.value,
+                    password: password.value
                 })
             })
-            .then(res=>{
-                if(res.status===200){
-                    alert("Register successful!")
+            .then(res => {
+                if(res.status === 200) {
+                    alert("Registration successful!")
                     location.href = "http://localhost:3000/login.html";
                 }
             })
-            .catch(error=>{
+            .catch(error => {
                 console.log(error);
             })
         }

@@ -1,84 +1,86 @@
 import bcrypt from "bcrypt";
-import userSchema from "./model/user.schema.js";
 import jwt from "jsonwebtoken";
+
+import userSchema from "./model/user.schema.js";
 import notesSchema from "./model/notes.schema.js";
 
-const { sign }=jwt;
+const { sign } = jwt;
 
-export async function register(req,res){
+
+export async function register(req, res) {
     try {
         let { username, password } = req.body;
-        if( username.length<4 && password.length<4 ){
-            return res.json("Invalid")
+        if( username.length < 4 && password.length < 4) {
+            return res.json("Invalid username or password");
         }
         let hashedPass = await bcrypt.hash(password, 10);
-        let userExist = await userSchema.findOne({ username});
-        if(userExist){
-            return res.status(401).send("Already Exists");
+        let userExist = await userSchema.findOne({ username });
+        if(userExist) {
+            return res.status(401).send("User already exists");
         }
-        let result = await userSchema.create({ username, password: hashedPass});
-        return res.status(200).send("Successfull");
+        let result = await userSchema.create({ username, password: hashedPass });
+        return res.status(200).send("Registration successful!");
     } catch (error) {
         console.log(error);
         res.status(500).send("Error");
     }
 }
 
-export async function login(req,res){
+export async function login(req, res) {
     try {
         let { username, password } = req.body;
-        if( username.length<4 && password.length<4 ){
-            return res.json("Invalid")
+        if( username.length < 4 && password.length < 4) {
+            return res.json("Invalid username or password");
         }
         let user = await userSchema.findOne({ username });
-        if(!user){
-            return res.status(403).send("Invalid");
+        if(!user) {
+            return res.status(403).send("Invalid username or password");
         }
-        let passCheck = await bcrypt.compare(password,user.password);
-        if(passCheck){
+        let passCheck = await bcrypt.compare(password, user.password);
+        if(passCheck) {
             let token = await sign({
-                username:user.username,
-                id:user._id
+                username: user.username,
+                id: user._id
             },
             process.env.SECRET_KEY,
             {
-                expiresIn:"24h"
+                expiresIn: "24h"
             })
             return res.status(200).json({
-                msg:"Login successful..",
-                token:token
+                msg: "Login successful...",
+                token: token
             })
         }
-        return res.status(403).send("invalid")
+        return res.status(403).send("invalid username or password")
     } catch (error) {
         console.log(error);
         res.status(500).send("Error");
     }
 }
 
-export async function profile(req, res){
+export async function profile(req, res) {
     try {
         let user = req.user;
-        let userDetails = await userSchema.findOne({_id:user.id},{password:0});
-        if(userDetails){
+        let userDetails = await userSchema.findOne({ _id: user.id },{ password: 0 });
+        if(userDetails) {
             return res.json(userDetails);
         }
-        return res.status(404).send("user not found");
+        return res.status(404).send("User not found");
     } catch (error) {
         console.log(error);
         res.status(500).send("Error");
     }
 }
 
-export async function addNote(req, res){
+export async function addNote(req, res) {
     try {
         let { note } = req.body;
         let { id } = req.user;
         let result = await notesSchema.create({
             note,
-            userId:id
+            userId: id
         })
-        res.json("Note added successfully")
+        res.json("Note added successfully");
     } catch (error) {
         console.log(error);
         res.status(500).send("Error");
@@ -90,7 +92,7 @@ export async function getNote(req, res){
         let { id } = req.user;
         let result = await notesSchema.create({ userId:id });
         console.log(result);
-        if(result>0){
+        if(result > 0){
             return res.status(200).send(result);
         }
         else{

@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User page</title>
+    <title>User</title>
 </head>
 <body>
-    <h1 id="headding">User</h1>
+    <h3 id = "heading">User Details</h3>
     <form onsubmit="add(event)">
-        <textarea name="note" id="note" cols="30" rows="10"></textarea>
+        <textarea name="note" id="note" cols="30" rows="30"></textarea>
         <input type="submit" value="add">
     </form>
     <ol id="notes"></ol>
     <script>
-        let headding = document.getElementById("headding");
-        let note = document.getElementById("note");
-        let token = localStorage.getItem("token");
+        let heading = document.getElementById("heading");
         let notes = document.getElementById("notes");
-        function add(event) {
-            event.preventDefault()
-            console.log(note.value);
-            fetch("http://localhost:3000/api/add-note", {
-                method: "post",
-                headers: {
-                    authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json"
+        let token = localStorage.getItem("token");
+        function add(event){
+            event.preventDefault();
+            fetch("http://localhost:3000/api/add-note",{
+                method:"post",
+                headers:{
+                    authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify({
-                    note: note.value
+                body:JSON.stringify({
+                    note:note.value
                 })
             })
-            .then(res => res.json())
-            .then(data => {
+            .then(res=>res.json())
+            .then(data=>{
                 alert(data)
             })
-            .catch(error => {
+            .catch(error=>{
                 console.log(error);
             })
         }
-
-        function profile() {
-            fetch("http://localhost:3000/api/profile", {
-                method: "get",
-                headers: {
-                    authorization: `Bearer ${token}`
+        function profile(){
+            fetch("http://localhost:3000/api/profile",{
+                method:"get",
+                headers:{
+                    authorization:`Bearer ${token}`
                 }
             })
-            .then(res => res.json())
-            .then(data => {
-                headding.innerHTML = `Welcome ${data.username}`
+            .then(res=>res.json())
+            .then(data=>{
+                heading.innerHTML = `Welcome ${data.username}`
             })
-            .catch(error => {
+            .catch(error=>{
                 console.log(error);
             })
             fetch("http://localhost:3000/api/get-note",{
@@ -63,7 +59,7 @@
             .then(data=>{
                 notes.innerHTML = "";
                 if(data.msg){
-                    notes.innerHTML = "data.msg";
+                    notes.innerHTML = `${data.msg}`;
                     return;
                 }
                 data.forEach(item => {

@@ -14,7 +14,7 @@
 <img alt="image">
 <script>
     let image = document.getElementById("image");
-    let img = document.getElementsByTagName("img");
+    let img = document.getElementsByTagName("img")[0];
     function update(event){
         event.preventDefault();
         readFile(image.files[0])

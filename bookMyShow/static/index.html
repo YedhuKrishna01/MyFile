@@ -8,9 +8,39 @@
     <link href="./style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="main">
         <div class="topbar">
-            <img src="../images/bookmyshow.png">
+            <img class="logo" src="../images/bookmyshow.png">
+            <input type="text" class="search" name="search" id="search" placeholder="Search for movies,events,sports & activities">
+            <a href="http://localhost:3000/add-review"><button class="add">Add Review</button></a>
+            <a href="http://localhost:3000/sign-up"><button class="signUp">Sign Up</button></a>
+        </div>
+        <div class="ad">
+            <img class="wcAd" src="../images/wcAd.avif">
+        </div>
+        <div class="recText">
+            Recommended Movies
+        </div>
+        <div class="movies">
+            <div class="garudan">
+                <img class="item" src="../images/garudan.avif">
+                <div class="movName">Garudan</div>
+            </div>
+            <div class="bandra">
+                <img class="item" src="../images/bandra.avif">
+                <div class="movName">Bandra</div></div>
+            <div class="tiger">
+                <img class="item" src="../images/tiger.avif">
+                <div class="movName">Tiger 3</div>
+            </div>
+            <div class="jtx2">
+                <img class="item" src="../images/jtx2.avif">
+                <div class="movName">Jigar Thanda</div>
+            </div>
+            <div class="vela">
+                <img class="item" src="../images/vela.avif">
+                <div class="movName">Vela</div>
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

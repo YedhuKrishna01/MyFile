@@ -6,3 +6,5 @@ export async function add(req,res){
         res.status(500).send("Error");
     }
 }
+
+https://ora.sh/openai/gpt4

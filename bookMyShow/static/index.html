@@ -42,6 +42,8 @@
                 <div class="movName">Vela</div>
             </div>
         </div>
+        <div id="addedMoviesContainer" class="movies">
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script>
@@ -49,6 +51,54 @@
             event.preventDefault();
             location.href = "http://localhost:3000/add.html";
         }
+        // Fetch and display movies when the page loads
+        window.onload = function () {
+        fetch('http://localhost:3000/api/getMovies')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    displayMovies(data.movies);
+                } else {
+                    console.error('Failed to fetch movies.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    };
+
+    function displayMovies(movies) {
+        const addedMoviesContainer = document.getElementById('addedMoviesContainer');
+
+        movies.forEach((movie, index) => {
+            // Create a container for the movie details
+            const movieContainer = document.createElement('div');
+            movieContainer.classList.add('addedMovie', 'col-md-3'); // Adjust the column size as needed
+
+            // Create an image element for the movie poster
+            const movieImage = document.createElement('img');
+            movieImage.classList.add('item', 'img-fluid'); // Use the same properties as the existing images
+            movieImage.alt = 'Added Movie Poster';
+            movieImage.src = movie.posterURL;
+
+            // Create a div for the movie name
+            const movieName = document.createElement('div');
+            movieName.classList.add('movName'); // Use the same properties as the existing movie names
+            movieName.textContent = movie.movieName;
+
+            // Add extra margin to the first movie input
+            if (index === 0) {
+                movieContainer.style.marginLeft = '2vw';
+            }
+
+            // Append the elements to the movie container
+            movieContainer.appendChild(movieImage);
+            movieContainer.appendChild(movieName);
+
+            // Append the movie container to the addedMoviesContainer
+            addedMoviesContainer.appendChild(movieContainer);
+        });
+    }
     </script>
 </body>
 </html>

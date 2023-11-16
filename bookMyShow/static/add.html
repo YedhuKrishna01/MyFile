@@ -10,11 +10,79 @@
 <body>
     <div class="pageHead">Add New Movie :</div>
     <div class="content">
-        <div class="leftContent">brb</div>
+        <div class="leftContent">
+            <label for="movieName">Movie Name:</label>
+            <input type="text" class="form-control" id="movieName" name="movieName" placeholder="Enter movie name">
+
+            <label for="movieRating">Movie Rating:</label>
+            <input type="text" class="form-control" id="movieRating" name="movieRating" placeholder="Enter movie rating">
+
+            <label for="movieLanguage">Movie Language:</label>
+            <input type="text" class="form-control" id="movieLanguage" name="movieLanguage" placeholder="Enter movie language">
+
+            <label for="movieGenre">Movie Genre:</label>
+            <input type="text" class="form-control" id="movieGenre" name="movieGenre" placeholder="Enter movie genre">
+        </div>
         <div class="rightContent">
             <label class="upLabel" for="upload">Upload your movie poster here:</label><br>
-            <input type="submit" class="btn btn-dark" value="upload" id="upload">
+            <input type="file" class="form-control" id="upload" name="poster" onchange="displayImage()">
+            <br>
+            <button class="btn btn-primary" onclick="uploadImage()">Upload</button>
+            <br>
+            <img id="selectedImage" class="img-fluid" style="display:none; width: 15vw; height: 45vh;" alt="Selected Image">
         </div>
     </div>
+
+    <script>
+        function displayImage() {
+            var input = document.getElementById('upload');
+            var image = document.getElementById('selectedImage');
+
+            // Check if a file is selected
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    image.src = e.target.result;
+                    image.style.display = 'block'; // Display the image
+                };
+
+                reader.readAsDataURL(input.files[0]); // Read the selected file as data URL
+            } else {
+                image.style.display = 'none'; // Hide the image if no file is selected
+            }
+        }
+
+        function uploadImage() {
+        var movieName = document.getElementById('movieName').value;
+        var posterURL = document.getElementById('selectedImage').src;
+
+        if (movieName && posterURL) {
+            // Send movie data to the server
+            fetch('http://localhost:3000/api/addMovie', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ movieName, posterURL }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Movie added successfully!');
+                    location.href = 'index.html';
+                } else {
+                    alert('Failed to add movie. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        } else {
+            alert('Please enter movie name and upload a poster.');
+        }
+    }
+    </script>
 </body>
 </html>

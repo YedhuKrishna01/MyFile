@@ -30,7 +30,7 @@ html,body{
     flex-direction: column;
     border: 2px solid black;
     width: 46vw;
-    height: 70vh;
+    height: 90vh;
     margin-top: 3vh;
     margin-left: 3vw;
     border-radius: 15px;
@@ -42,7 +42,7 @@ html,body{
     flex-direction: column;
     border: 2px solid black;
     width: 46vw;
-    height: 70vh;
+    height: 90vh;
     margin-top: 3vh;
     margin-left: 2vw;
     border-radius: 15px;

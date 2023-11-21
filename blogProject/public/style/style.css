@@ -1,0 +1,44 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.navbar-brand{
+    color: white;
+    border: 1px solid white;
+    border-radius: 1vh;
+    padding: 1vh;
+    margin-left: 2vw;
+}
+
+.nav-link{
+    color: white;
+}
+
+.signUp{
+    margin-left: 72vw;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.blogg1{
+    width: 18vw;
+    height: 10vh;
+}
+
+.btn1{
+    background-color: white;
+    margin-top: 2vh;
+}
+
+.bHeading{
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom:3px solid red;
+}

@@ -5,6 +5,10 @@ html,body{
     overflow-x: hidden;
 }
 
+.navbar{
+    height: 12vh;
+}
+
 .navbar-brand{
     color: white;
     border: 1px solid white;
@@ -28,17 +32,45 @@ ul{
 }
 
 .blogg1{
-    width: 18vw;
+    width: 17.2vw;
     height: 10vh;
 }
 
 .btn1{
     background-color: white;
-    margin-top: 2vh;
+    margin-top: 4vh;
+    margin-left: 2.5vw;
+    width: 18vw;
+    height: 12vh;
+}
+
+.extra{
+    height: 7vh;
 }
 
 .bHeading{
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
-    border-bottom:3px solid red;
+    margin-top: 1vh;
+    padding-left: 3vw;
+    padding-top: 2.5vh;
+    height: 10vh;
+    border:3px solid red;
+}
+
+#regForm{
+    border: 3px solid red;
+    border-radius: 5%;
+    height: 65vh;
+    width: 30vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+.registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 88vh;
 }

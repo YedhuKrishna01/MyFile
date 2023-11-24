@@ -61,10 +61,10 @@ ul{
 #regForm{
     border: 3px solid red;
     border-radius: 5%;
-    height: 65vh;
+    height: 70vh;
     width: 30vw;
     padding-left: 5vw;
-    padding-top: 5vh;
+    padding-top: 3vh;
 }
 
 .registration{
@@ -74,3 +74,58 @@ ul{
     width: 100vw;
     height: 88vh;
 }
+
+.regTitle{
+    font-weight: bold;
+    margin-left: -2vw;
+}
+
+.inputs{
+    margin-left: -2vw;
+    margin-top: 2vh;
+    font-size: 0.9rem;
+}
+
+input{
+    border-radius: 10px;
+    width: 25vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#logForm{
+    border: 3px solid red;
+    border-radius: 5%;
+    height: 70vh;
+    width: 30vw;
+    padding-left: 5vw;
+    padding-top: 3vh;
+}
+
+.log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 88vh;
+}
+
+#loading_indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top: 10px solid red;
+    width: 100px;
+    height: 100px;
+    animation: spinIndicator 1s linear infinite;
+ }
+ @keyframes spinIndicator {
+    100% {
+       transform: rotate(360deg);
+    }
+ }

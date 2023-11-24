@@ -22,13 +22,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <button class="btn btn-danger signUp" onclick="signUp(event)">SignUp</button>
+              <button class="btn btn-danger signUp" id="signUp" onclick="signUp(id)">SignUp</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">LogIn</a>
+              <button class="btn btn-danger login" id="login" onclick="signUp(id)">LogIn</button>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Profile</a>
+              <button class="btn btn-danger profile" id="profile" onclick="signUp(id)">Profile</button>
             </li>
           </ul>
         </div>
@@ -40,7 +40,7 @@
         <li class="bHeading">
           Trending Bloggs:
         </li>
-        <button class="btn1" onclick="goto(event)">
+        <button class="btn1" id="btn1" onclick="goto(id)">
           <li>
             <?xml version="1.0" standalone="no"?>
             <!DOCTYPE svg
@@ -335,30 +335,22 @@ c62 0 70 2 67 18 -3 14 -17 17 -91 20 l-87 3 0 -126z" />
 
           </li>
         </button>
-        <button class="btn1" onclick="goto2(event)">
+        <button class="btn1" id="btn2" onclick="goto(id)">
           <li>
             <img class="blogg1" src="../images/enjoyit.jpg">
           </li>
         </button>
-        <button class="btn1" style="height: 10vh;" onclick="goto3(event)">
+        <button class="btn1" id="btn3" style="height: 10vh;" onclick="goto(id)">
           <li>
             <img class="blogg1 extra" src="../images/gift.jpg">
             <div class="mssg" style="font-size: 0.7rem; font-weight: bold;">Shop exciting gifts</div>
           </li>
         </button>
-        <button class="btn1">
-          <li>
-            <img class="blogg1" src="../images/firstBlogg.png">
-          </li>
-        </button>
-        <button class="btn1">
-          <li>
-            <img class="blogg1" src="../images/firstBlogg.png">
-          </li>
         </button>
       </ul>
     </div>
     <div class="contentbar" id="contentbar" style="background-color: white;">
+      <div id = "loading_indicator"> </div>
       <iframe src="http://designformankind.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw ;margin-top:7vh; border:2px solid rgba(0, 0, 0, 0.616)"></iframe>
     </div>
   </div>
@@ -366,21 +358,39 @@ c62 0 70 2 67 18 -3 14 -17 17 -91 20 l-87 3 0 -126z" />
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
   <script>
-    async function signUp(event){
-      location.href="http://localhost:3000/register"
+    async function signUp(elem){
+      if(elem==="signUp"){
+        location.href="http://localhost:3000/register"
+      }else if(elem==="login"){
+        location.href="http://localhost:3000/login"
+      }
+      else if(elem==="profile"){
+        location.href="http://localhost:3000/profile"
+      }
     }
-    async function goto(event){
+
+    async function goto(elem){
       let content = await document.getElementById("contentbar");
-      content.innerHTML = '<iframe src="http://designformankind.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw;"></iframe>'
+      if(elem==="btn1"){
+        content.innerHTML = '<iframe src="http://designformankind.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw;"></iframe>'
+      }else if(elem==="btn2"){
+        content.innerHTML = '<iframe src="http://eliseblaha.typepad.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw"></iframe>'
+      }else if(elem==="btn3"){
+        content.innerHTML = '<iframe src="http://theeverygirl.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw"></iframe>'
+      }
     }
-    async function goto2(event){
-      let content = await document.getElementById("contentbar");
-      content.innerHTML = '<iframe src="http://eliseblaha.typepad.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw"></iframe>'
-    }
-    async function goto3(event){
-      let content = await document.getElementById("contentbar");
-      content.innerHTML = '<iframe src="http://theeverygirl.com/" height="1000" width="1000" title="Iframe Example" style ="margin-left:10vw"></iframe>'
-    }
+
+    document.onreadystatechange = function () {
+         if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.getElementById("loading_indicator").style.visibility = "visible";
+         } else {
+            setTimeout(() => {
+               document.getElementById("loading_indicator").style.display ="none";
+               document.querySelector("body").style.visibility = "visible";
+            }, 3000)
+         }
+      };
   </script>
 </body>
 

@@ -15,6 +15,14 @@ app.get("/register",(req, res)=>{
     res.sendFile(_dirname+'/public/html/register.html')
 })
 
+app.get("/login",(req, res)=>{
+    res.sendFile(_dirname+'/public/html/login.html')
+})
+
+app.get("/profile",(req, res)=>{
+    res.sendFile(_dirname+'/public/html/profile.html')
+})
+
 app.listen(port,()=>{
     console.log(`server has started on port ${port}`);
 })

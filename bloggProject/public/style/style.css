@@ -1,0 +1,80 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(37, 37, 37);
+}
+
+.topbar{
+    height: 14vh;
+    background-color: #F5740A;
+    color: white;
+    font-weight: bold;
+}
+
+.title{
+    width: fit-content;
+    padding: 1vh;
+    color: whitesmoke;
+    background-color: rgb(37, 37, 37);
+    border-radius: 10px;
+}
+
+.topright{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-dark{
+    border: none;
+    width: fit-content;
+    height: 6vh;
+    padding: 1vh;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-dark:hover{
+    background-color: white;
+    color: rgb(37, 37, 37);
+}
+
+.midbar{
+    height: 86vh;
+    width: 100vw;
+}
+
+.topbloggs{
+    background-color: #F5740A;
+    border: 3vh solid rgb(37, 37, 37);
+    border-radius: 7vh;
+    width: 26vw;
+    height: 82vh;
+}
+
+.bHeading{
+    text-decoration: 1px underline ;
+    font-weight: bold;
+    color: whitesmoke;
+    text-underline-offset: 1vh;
+}
+
+.bloggs{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-weight: bold;
+    width: 20vw;
+}
+
+.bloggs:hover{
+    transform: scale(1.1);
+    color: rgb(37, 37, 37);
+    background-color: white;
+}
+
+.sites{
+    border-radius: 4vh;
+    width: 69vw;
+    height: 76vh;
+}

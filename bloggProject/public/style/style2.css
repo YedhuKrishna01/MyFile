@@ -1,0 +1,93 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgb(37, 37, 37);
+}
+
+.topbar{
+    height: 14vh;
+    background-color: #F5740A;
+    color: white;
+    font-weight: bold;
+}
+
+.title{
+    width: fit-content;
+    padding: 1vh;
+    color: whitesmoke;
+    background-color: rgb(37, 37, 37);
+    border-radius: 10px;
+}
+
+.topright{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-dark{
+    border: none;
+    width: fit-content;
+    height: 6vh;
+    padding: 1vh;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-dark:hover{
+    background-color: white;
+    color: rgb(37, 37, 37);
+}
+
+.signUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 86vh;
+    margin-left: -2.3vh;
+}
+
+.content{
+    height: 70vh;
+    width: 34vw;
+    background-color: #F5740A;
+    border-radius: 3vh;
+    padding: 5vh;
+}
+
+.content2{
+    height: 50vh;
+    width: 34vw;
+    background-color: #F5740A;
+    border-radius: 3vh;
+    padding: 5vh;
+}
+
+.heading{
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    font-size: 5vh;
+    text-decoration: 2px underline rgb(37, 37, 37);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+label{
+    font-size: 3vh;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+}
+
+input{
+    width: 27vw;
+    border-radius: 1vh;
+    border: none;
+    margin-top: 1vh;
+}

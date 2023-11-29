@@ -1,0 +1,4 @@
+shouldcomponentupdate()
+componentdidmount()
+componentdidupdate()
+componentwillunmount()

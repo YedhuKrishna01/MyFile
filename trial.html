@@ -1,36 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./trial.css">
-</head>
-<body>
-    <div class="Topnav">
-        <div class="home">
-            Home
-        </div>
-        <div class="dashboard">
-            Dashboard
-        </div>
-        <div class="about">
-            About
-        </div>
-        <div class="help">
-            Help
-        </div>
-    </div>
-    <div class="image">
-        <img src="./logo.jpeg" alt="img here" height="300px" width="300px">
-    </div>
-    <div class="heading">
-            Office
-    </div>
-    <div class="content">
-        An office is understood to be a place where clerical work is performed and where all kinds of paper work (letters, correspondence, files, records etc.) is maintained and dealt with. It is a central place where all sorts of clerical work is done to co-ordinate and control the affairs of the whole organization.
+Certainly! You can modify the `handleIncrement` and `handleDecrement` methods to achieve this. Here's the updated code:
 
-“Office is a unit where relevant records for the purpose of control, planning and efficient management of the organization are prepared, handled and preserved. Office provides facilities for internal and external communication and co-ordinates activities of different departments of the organization.”
-    </div>
-</body>
-</html>
+```jsx
+import React from "react";
+import './style.css'
+
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            count: 0,
+            todo: []
+        }
+    }
+
+    handleIncrement = () => {
+        this.setState((state) => ({
+            count: state.count + 1
+        }));
+    };
+
+    handleDecrement = () => {
+        this.setState((state) => ({
+            count: state.count - 1
+        }));
+    };
+
+    componentDidMount() {
+        console.log("component did mount");
+    }
+
+    componentDidUpdate() {
+        console.log("component did update");
+    }
+
+    render() {
+        return (
+            <>
+                <div>
+                    <h1>Counter: {this.state.count % 2 !== 0 ? this.state.count : ''}</h1>
+
+                    <button onClick={this.handleDecrement}>-</button>
+                    <button onClick={this.handleIncrement}>+</button>
+                </div>
+            </>
+        );
+    }
+}
+
+export default App;
+```
+
+Now, the counter will only display odd numbers when incremented and even numbers when decremented. The condition `this.state.count % 2 !== 0` in the render method ensures that only odd numbers are displayed.

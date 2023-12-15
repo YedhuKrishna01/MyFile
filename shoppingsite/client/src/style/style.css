@@ -1,0 +1,38 @@
+html,body{
+    background-color: rgb(49, 49, 49);
+}
+
+.topbar{
+    background-color: black;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+}
+
+.logo{
+    font-size: 150%;
+    width: 12vw;
+    font-weight: bold;
+    border-bottom: 0.5vh solid white;
+    border-right: 0.5vh solid white;
+    border-radius: 10px;
+}
+
+.searchBar{
+    border-radius: 10px;
+    width: 28vw;
+    height: 5vh;
+    padding-left: 3vh;
+}
+
+.navbuts{
+    display:flex;
+    justify-content: end;
+}
+
+.btn{
+    width: auto;
+    font-size: 70%;
+    height: fit-content;
+    font-weight: bold;
+}

@@ -1,5 +1,9 @@
 html,body{
-    background-color: rgb(49, 49, 49);
+    background-color: rgb(34, 34, 34);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .topbar{
@@ -13,9 +17,6 @@ html,body{
     font-size: 150%;
     width: 12vw;
     font-weight: bold;
-    border-bottom: 0.5vh solid white;
-    border-right: 0.5vh solid white;
-    border-radius: 10px;
 }
 
 .searchBar{
@@ -35,4 +36,59 @@ html,body{
     font-size: 70%;
     height: fit-content;
     font-weight: bold;
+}
+
+.sidebar{
+    background-color: black;
+    height: 50vh;
+    color: white;
+    border-radius: 20px;
+}
+
+.heading{
+    text-decoration: 1px underline;
+    text-underline-offset: 1.5vh;
+}
+
+.filter{
+    background-color: black;
+    border: none;
+    color: white;
+    width: 13vw;
+    border-radius: 20px;
+    transition-duration: 1s;
+}
+
+.filter:hover{
+    background-color: rgb(56, 56, 56);
+    transform: scale(1.1);
+}
+
+.item{
+    display: grid;
+    grid-template-rows: 25vh 25vh 25vh;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-gap: 3vw;
+    height: fit-content;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+.items{
+    background-color: black;
+    color: white;
+    height: 25vh;
+    width: 20vw;
+    transition-duration: 1s;
+    border-radius: 20px;
+}
+
+.items:hover{
+    transform: scale(1.2);
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    height: 15vh;
 }

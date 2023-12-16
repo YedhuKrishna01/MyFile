@@ -1,0 +1,76 @@
+html,body{
+    background-color: rgb(49, 49, 49);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.topbar{
+    background-color: black;
+    width: 100vw;
+    height: 10vh;
+    color: white;
+}
+
+.logo{
+    font-size: 150%;
+    width: 12vw;
+    font-weight: bold;
+}
+
+.searchBar{
+    border-radius: 10px;
+    width: 28vw;
+    height: 5vh;
+    padding-left: 3vh;
+}
+
+.navbuts{
+    display:flex;
+    justify-content: end;
+}
+
+.btn{
+    width: auto;
+    font-size: 70%;
+    height: fit-content;
+    font-weight: bold;
+}
+
+.sidebar{
+    background-color: black;
+    height: 65vh;
+    color: white;
+    border-radius: 20px;
+}
+
+.heading{
+    text-decoration: 1px underline;
+    text-underline-offset: 1.5vh;
+}
+
+.filter{
+    background-color: black;
+    border: none;
+    color: white;
+    width: 15vw;
+    border-radius: 20px;
+    transition-duration: 1s;
+}
+
+.filter:hover{
+    background-color: rgb(114, 112, 112);
+}
+
+.cards{
+    display: flex;
+    height: 200vh;
+}
+
+.items{
+    background-color: black;
+    color: white;
+    height: 40vh;
+    width: 40vw;
+}

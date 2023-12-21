@@ -10,12 +10,13 @@ html,body{
     background-color: black;
     width: 100vw;
     height: 10vh;
-    color: white;
+    box-shadow: 0 0.8vh 1.1vh #F4CE14;
 }
 
 .logo{
     font-size: 150%;
     width: 12vw;
+    color: #F4CE14;
     font-weight: bold;
 }
 
@@ -24,11 +25,20 @@ html,body{
     width: 28vw;
     height: 5vh;
     padding-left: 3vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: 0 2px #F4CE14;
+    color: #F4CE14;
+    transition-duration: 0.7s;
+}
+
+.searchBar:focus{
+    outline: none;
+    box-shadow: 0vh 0vh 0.4vh 0.3vh #F4CE14;
 }
 
 .navbuts{
     display:flex;
-    justify-content: end;
 }
 
 .btn{
@@ -36,13 +46,26 @@ html,body{
     font-size: 70%;
     height: fit-content;
     font-weight: bold;
+    background-color: black;
+    color: #F4CE14;
+    border: 1px solid #F4CE14;
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    border: 1px solid #F4CE14;
 }
 
 .sidebar{
     background-color: black;
-    height: 50vh;
-    color: white;
+    height: 54vh;
+    color: #F4CE14;
     border-radius: 20px;
+}
+
+.sidebar:hover{
+    box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
 }
 
 .heading{
@@ -53,15 +76,15 @@ html,body{
 .filter{
     background-color: black;
     border: none;
-    color: white;
+    color: #F4CE14;
     width: 13vw;
     border-radius: 20px;
-    transition-duration: 1s;
+    transition-duration: 0.6s;
 }
 
 .filter:hover{
-    background-color: rgb(56, 56, 56);
-    transform: scale(1.1);
+    color: #F4CE14;
+    transform: scale(1.2);
 }
 
 .item{
@@ -76,15 +99,14 @@ html,body{
 
 .items{
     background-color: black;
-    color: white;
+    color: #F4CE14;
     height: 25vh;
     width: 20vw;
-    transition-duration: 1s;
     border-radius: 20px;
 }
 
 .items:hover{
-    transform: scale(1.2);
+    box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
 }
 
 .footer{

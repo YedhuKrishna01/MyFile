@@ -1,23 +1,24 @@
-import { useState } from 'react';
-import  Nav from "./Nav.jsx";
-import Cards from "./Cards.jsx";
-import  Footer from "./Footer.jsx";
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import "./style/style.css";
-import Sidebar from './Sidebar.jsx';
+import  Nav from "./components/Nav.jsx";
+import Home from "./pages/Home.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Cart from "./pages/Cart.jsx";
+import Profile from "./pages/Profile.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='container-fluid'>
-        <Nav />
-        <div className="row ms-3 mt-3">
-          <Sidebar />
-          <Cards/>
-        </div>
-        <Footer/>
-      </div>
+      <Router>
+        <Nav/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/signUp" element={<SignUp/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+        </Routes>
+      </Router>
     </>
   )
 }

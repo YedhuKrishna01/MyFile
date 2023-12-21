@@ -1,0 +1,42 @@
+.signCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100vw;
+    flex-direction: column;
+    margin-top: 7vh;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 40vw;
+    border-radius: 20px;
+    box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
+}
+
+.signHead{
+    color: #F4CE14;
+    font-size: 4vh;
+    margin-top: 5vh;
+}
+
+.search{
+    border-radius: 10px;
+    width: 22vw;
+    height: 5vh;
+    padding-left: 3vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: 0 2px #F4CE14;
+    color: #F4CE14;
+    transition-duration: 0.7s;
+}
+
+.search:focus{
+    outline: none;
+    box-shadow: 0vh 0vh 0.4vh 0.3vh #F4CE14;
+}

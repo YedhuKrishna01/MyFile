@@ -1,0 +1,119 @@
+html,body{
+    background-color: rgb(34, 34, 34);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.topbar{
+    background-color: black;
+    width: 100vw;
+    height: 10vh;
+    box-shadow: 0 0.8vh 1.1vh #F4CE14;
+}
+
+.logo{
+    font-size: 4vh;
+    width: 12vw;
+    margin-left: 1vw;
+    color: #F4CE14;
+    font-weight: bold;
+}
+
+.searchBar{
+    border-radius: 10px;
+    width: 28vw;
+    height: 5vh;
+    padding-left: 3vh;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: 0 2px #F4CE14;
+    color: #F4CE14;
+    transition-duration: 0.7s;
+}
+
+.searchBar:focus{
+    outline: none;
+    box-shadow: 0vh 0vh 0.4vh 0.3vh #F4CE14;
+}
+
+.navbuts{
+    display:flex;
+}
+
+.btn{
+    width: auto;
+    font-size: 2vh;
+    height: 4.3vh;
+    font-weight: bold;
+    background-color: black;
+    color: #F4CE14;
+    border: 1px solid #F4CE14;
+}
+
+.btn:hover{
+    color: white;
+    background-color: black;
+    border: 1px solid #F4CE14;
+}
+
+.sidebar{
+    background-color: black;
+    height: 40vh;
+    width: 25vh;
+    color: #F4CE14;
+    border-radius: 20px;
+}
+
+.sidebar:hover{
+    box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
+}
+
+.heading{
+    text-decoration: 1px underline;
+    text-underline-offset: 1.5vh;
+}
+
+.filter{
+    background-color: black;
+    border: none;
+    color: #F4CE14;
+    width: 10vw;
+    border-radius: 20px;
+    transition-duration: 0.6s;
+}
+
+.filter:hover{
+    color: #F4CE14;
+    transform: scale(1.1);
+}
+
+.item{
+    display: grid;
+    grid-template-rows: 25vh 25vh 25vh;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-gap: 3vw;
+    height: fit-content;
+    margin-left: 2vw;
+    margin-top: 2vh;
+}
+
+.items{
+    background-color: black;
+    color: #F4CE14;
+    height: 25vh;
+    width: 20vw;
+    border-radius: 20px;
+}
+
+.items:hover{
+    box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    height: 15vh;
+}
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import  Nav from "../components/Nav.jsx";
+import "../style/home.css";
 import Cards from "../components/Cards.jsx";
 import  Footer from "../components/Footer.jsx";
 import Sidebar from '../components/Sidebar.jsx';

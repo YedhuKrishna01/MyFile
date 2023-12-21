@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 
 
-const PORT = 3000;
+const PORT = 3200;
 const app = express();
 
 app.get("/",(req, res)=>{
@@ -11,5 +11,5 @@ app.get("/",(req, res)=>{
 
 
 app.listen(PORT,()=>{
-    console.log("Server is running on port 3000")
+    console.log("Server is running on port 3200")
 })

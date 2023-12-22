@@ -13,20 +13,28 @@
     align-items: center;
     flex-direction: column;
     height: 50vh;
-    width: 40vw;
+    color: #F4CE14;
+    width: 25vw;
     border-radius: 20px;
     box-shadow: 0vh 0vh 1.1vh 0.6vh #F4CE14;
 }
 
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .signHead{
     color: #F4CE14;
-    font-size: 4vh;
+    font-size: 3vh;
     margin-top: 5vh;
+    font-weight: bold;
 }
 
 .search{
     border-radius: 10px;
-    width: 22vw;
+    width: 18vw;
     height: 5vh;
     padding-left: 3vh;
     background-color: rgba(255, 255, 255, 0);
@@ -39,4 +47,9 @@
 .search:focus{
     outline: none;
     box-shadow: 0vh 0vh 0.4vh 0.3vh #F4CE14;
+}
+
+.tags{
+    font-size: 2.5vh;
+    color: white;
 }

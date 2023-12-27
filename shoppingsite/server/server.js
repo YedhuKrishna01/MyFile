@@ -1,13 +1,23 @@
 import express from "express";
+import router from "./router.js";
 import connect from "./connection.js";
-import dotenv from "dotenv";
+import path from "path";
 
-dotenv.config();
 const PORT = 3200;
 const app = express();
 
-app.get("/",(req, res)=>{
-    res.send("hello")
+app.use(express.json({
+    limit: "5mb"
+}))
+app.use(express.static(path.resolve("./dist")));
+app.use("/api", router);
+app.get("/*",(req, res) => {
+    return res.sendFile(path.resolve("./dist/index.html"));
+})
+app.all("/*",(req, res) => {
+    return res.status(404).json({
+        msg: "Not found!"
+    })
 })
 
 

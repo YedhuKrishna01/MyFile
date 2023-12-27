@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 78vh;
     width: 100vw;
     flex-direction: column;
     margin-top: 7vh;
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 50vh;
+    height: 75vh;
     color: #F4CE14;
     width: 25vw;
     border-radius: 20px;
@@ -27,7 +27,7 @@ form{
 
 .signHead{
     color: #F4CE14;
-    font-size: 3vh;
+    font-size: 2.5vh;
     margin-top: 5vh;
     font-weight: bold;
 }
@@ -50,6 +50,10 @@ form{
 }
 
 .tags{
-    font-size: 2.5vh;
-    color: white;
+    font-size: 2.2vh;
+    color: rgba(255, 255, 255, 0.781);
+}
+
+.select{
+    cursor: pointer;
 }

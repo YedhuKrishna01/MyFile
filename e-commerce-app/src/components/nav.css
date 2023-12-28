@@ -1,0 +1,25 @@
+.nav-container {
+    width: 100%;
+    height: 4rem;
+    padding: 0.5rem;
+    position: fixed;
+    background-color: rgb(237, 238, 248);
+    box-shadow: 0 1rem 2rem 0.1rem rgba(179, 186, 214, 0.897);
+}
+
+.nav-container img {
+    height: 100%;
+}
+.nav-container .right {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.nav-container .right button {
+    height: 80%;
+}

@@ -1,0 +1,41 @@
+@media screen and (min-width: 1300px) {
+    .brand{
+       padding-left: 80px;
+       padding-top: 17px;
+       font-size: 22px;
+    }
+    #about-me{
+      margin-top: 400px;
+    }
+    .first{
+        height:300px;
+        border-width:6px;
+    }
+    .second{
+        height:660px;
+        border-width:6px;
+    }
+    .third{
+        height:630px;
+        border-width:6px;
+    }
+    .servItem{
+        height:75px
+    }
+    .banner{
+        font-size: 80px;
+    }
+    .abtSecIntro{
+        margin-top: 180px;
+        margin-left: 16px;
+        font-size: 35px;
+    }
+    .abtListIntro{
+        font-size:35px;
+    }
+    .abtList{
+        font-size: 37px;
+        margin-left: 75px;
+        margin-top: 20px;
+    }
+  }

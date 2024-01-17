@@ -1,10 +1,11 @@
 import React from 'react';
-import "../styles/Banner.css"
+import "../styles/Banner.css";
+import "../styles/main.css"
 
 function Banner() {
     return (
       <div className='grid grid-cols-3 h-[450px]'>
-        <div className='col-span-2 flex justify-center items-center text-[2.5rem] ps-5 animate-character'>
+        <div className='banner col-span-2 flex justify-center items-center text-[2.5rem] ps-5 animate-character'>
           Where your dreams are no longer just a Dream.
         </div>
         <div className=''>

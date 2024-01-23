@@ -1,44 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import "../styles/main.css"
+import "../styles/main.css";
 
 function AboutMe() {
-  const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-
-      const aboutMeElement = document.getElementById('about-me');
-      const aboutMePosition = aboutMeElement.getBoundingClientRect().top;
-
-      const isAboutMeVisible = aboutMePosition < window.innerHeight / 2;
-
-      setIsVisible(isAboutMeVisible);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <div id="about-me" style={{ opacity: isVisible ? 1 : 0, transition: 'opacity 1s' }}>
-      <div className='pt-1 ps-5 h-11 underline underline-offset-4 decoration-red-700 text-[2rem] mt-20'>About me</div>
-      <div className='grid grid-cols-6 mt-8 gap-2'>
-        <div className='first col-span-1 flex justify-center items-center border-2 border-pink-500 rounded-full h-48 scale-75'>My img here</div>
-        <div className='second ms-[-40px] mt-24 col-span-2 border-4 bg-black border-blue-700 rounded-full h-[420px] text-white ps-6 pt-2 text-[1.1rem] scale-75'>
-          <div className='abtSecIntro mt-24 ps-2 font-extralight text-[1.2rem]'>My name's Yedhukrishna KS & I love to design products and code them to reality.</div>
-          <div className='abtListIntro ms-24 mt-8 text-white font-extralight'> I am a -
-            <ul className='text-2xl list-disc ml-5 mt-1'>
-              <li className='abtList'>Web Developer</li>
-              <li className='abtList'>UI/UX designer</li>
-              <li className='abtList'>3D-Modeller</li>
-            </ul>
+    <div id="about-me" className='section text-white h-screen grid grid-cols-12'>
+      <div className='col-span-10 col-start-2'>
+        <div className='text-[3rem]'>About Me</div>
+        <div className='grid grid-cols-4 mt-5'>
+          <div className=' col-span-3 text-lg'>
+            <div>Professionally connected with the web development industry.</div>
+            <div>Problem solver, always interested to learn new things, loyal employee with high attention to detail.</div>
+            <div>Seriously love designing, coding, reading, listening to music and playing video games.</div>
+            <div>Interested in the entire frontend spectrum and working on ambitious projects with interesting people. Go teamwork !!</div>
+          </div>
+          <div className='grid place-content-center p-5 w-44 ms-16 mt-[-50px] border-white rounded-full border-solid border-[1px]'>
+            <img className='rounded-full h-44' src='/mypic.jpg'></img>
           </div>
         </div>
-        <div className='third mt-[-30px] col-span-2 flex justify-center items-center border-4 border-purple-600 bg-black rounded-full font-bold h-96'></div>
-        
       </div>
     </div>
   );

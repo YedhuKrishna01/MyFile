@@ -3,16 +3,31 @@ import '../styles/App.css';
 import '../styles/main.css';
 
 function Nav() {
+
+  function scrollToSection(event, sectionId) {
+    event.preventDefault();
+
+    const navbarHeight = 56;
+    const targetSection = document.getElementById(sectionId);
+
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - navbarHeight,
+        behavior: 'smooth',
+      });
+    }
+  }
+
   return (
-    <div className='grid grid-cols-12 bg-black'>
-      <div className='brand col-span-6 text-lg h-14 ps-10 pt-3 font-bold bg-white rounded-tr-lg'>
-        <span className='bg-black rounded-full p-1 text-white'>YK</span>rishna
+    <div className='nav w-full grid grid-cols-3 fixed' id='nav'>
+      <div className='brand text-lg h-14 ps-10 pt-3 font-bold text-white rounded-tr-lg'>
+        <span className='bg-black rounded-full p-1'>YK</span>rishna
       </div>
-      <div className='bg-black text-white col-span-6 flex justify-end'>
-        <button className='w-20 focus:bg-white focus:text-black focus:rounded-tr-lg'>Welcome</button>
-        <a href='#about-me'><button className='w-20 h-14 focus:bg-white focus:text-black focus:rounded-tr-lg'>About me</button></a>
-        <a href='#services'><button className='w-20 h-14 focus:bg-white focus:text-black focus:rounded-tr-lg'>Services</button></a>
-        <a href='#projects'><button className='w-20 h-14 focus:bg-white focus:text-black'>Projects</button></a>
+      <div className='bg-purple-950 grid grid-cols-4 justify-items-center place-items-center rounded-full mt-5'>
+        <a href="#about-me" className="navBtns text-white w-full h-full grid place-content-center rounded " onClick={(e) => scrollToSection(e, 'about-me')}>About</a>
+        <a href="#skills" className="navBtns text-white w-full h-full grid place-content-center rounded" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a>
+        <a href="#projects" className="navBtns text-white w-full h-full grid place-content-center rounded" onClick={(e) => scrollToSection(e, 'projects')}>Works</a>
+        <a href="#contacts" className="navBtns text-white w-full h-full grid place-content-center rounded" onClick={(e) => scrollToSection(e, 'contacts')}>Contact</a>
       </div>
     </div>
   )

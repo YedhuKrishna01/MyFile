@@ -1,41 +1,47 @@
-@media screen and (min-width: 1300px) {
-    .brand{
-       padding-left: 80px;
-       padding-top: 17px;
-       font-size: 22px;
-    }
-    #about-me{
-      margin-top: 400px;
-    }
-    .first{
-        height:300px;
-        border-width:6px;
-    }
-    .second{
-        height:660px;
-        border-width:6px;
-    }
-    .third{
-        height:630px;
-        border-width:6px;
-    }
-    .servItem{
-        height:75px
-    }
-    .banner{
-        font-size: 80px;
-    }
-    .abtSecIntro{
-        margin-top: 180px;
-        margin-left: 16px;
-        font-size: 35px;
-    }
-    .abtListIntro{
-        font-size:35px;
-    }
-    .abtList{
-        font-size: 37px;
-        margin-left: 75px;
-        margin-top: 20px;
-    }
+html,body{
+    overflow-x: hidden;
+}
+
+@keyframes theChange{
+   0%{
+    margin-left: 0;
+   }
+   50%{
+    margin-left: -275px;
+   }
+   100%{
+    margin-left: -530px;
+   }
+}
+.webD{
+    animation: theChange 12s infinite; 
+}
+
+.roles{
+    background-color: rgba(60, 7, 100, 0.29);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    word-spacing: 2px;
+    font-size: 1.7rem;
+}
+
+.navBtns {
+    position: relative;
+    text-decoration: none;
   }
+  
+.navBtns:focus::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.sets:hover{
+    background-color: rgba(60, 7, 100, 0.29);
+}

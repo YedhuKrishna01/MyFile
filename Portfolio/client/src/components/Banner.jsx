@@ -1,18 +1,21 @@
 import React from 'react';
-import "../styles/Banner.css";
-import "../styles/main.css"
+import "../styles/main.css";
 
 function Banner() {
-    return (
-      <div className='grid grid-cols-3 h-[450px]'>
-        <div className='banner col-span-2 flex justify-center items-center text-[2.5rem] ps-5 animate-character'>
-          Where your dreams are no longer just a Dream.
-        </div>
-        <div className=''>
-            <img className='scale-75 mt-[-40px] rounded-xl' src='/public/blue.jpg' alt='image here'/>
+  return (
+    <div className='flex justify-center items-center text-3xl h-screen'>
+      <div className='roles w-[400px] h-48 rounded grid place-content-center'>
+        <div className='text-white py-2 border-y-2 w-72 h-24'>
+          Hi. I am Yedhukrishna 
+          <div className='ms-6 whitespace-nowrap overflow-hidden'>
+            <span className='webD'>| Web Developer |</span>
+            <span className='ms-10 uiD'>| UI/UX Designer |</span>
+            <span className='ms-10 modeller'>| 3D Modeller |</span>
+          </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-export default Banner
+export default Banner;

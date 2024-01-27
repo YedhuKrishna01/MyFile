@@ -9,6 +9,7 @@ function Contacts() {
           <li>Phone: +918592803244</li>
           <li>Email: <a className='underline underline-offset-2 decoration-yellow-300 decoration-2' href='mailto:yedhukrishnagk@gmail.com'>yedhukrishnagk@gmail.com</a></li>
           <li>Git: <a className='underline underline-offset-2 decoration-yellow-300 decoration-2' href='https://github.com/YedhuKrishna01'>Click here</a></li>
+          <li>LinkedIn: <a className='underline underline-offset-2 decoration-yellow-300 decoration-2' href='https://linkedin.com/in/yedhukrishna-ks-284502267'>Go to</a></li>
         </div>
       </div>
     </div>
